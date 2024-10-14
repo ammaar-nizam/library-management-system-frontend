@@ -33,7 +33,7 @@ const BookFormModal: React.FC<BookFormModalProps> = ({
       setAuthor("");
       setDescription("");
     }
-  }, [initialBook]);
+  }, [initialBook, isOpen]);
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -59,7 +59,15 @@ const BookFormModal: React.FC<BookFormModalProps> = ({
         description,
       };
       onSave(bookData);
+      resetForm();
     }
+  };
+
+  const resetForm = () => {
+    setTitle("");
+    setAuthor("");
+    setDescription("");
+    setErrors({});
   };
 
   return (

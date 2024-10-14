@@ -25,7 +25,7 @@ const BookDetail: React.FC = () => {
       if (id) {
         try {
           const bookId = parseInt(id);
-          const data = await getBookById(bookId); 
+          const data = await getBookById(bookId);
           setBookData(data);
         } catch (error: any) {
           setError(error.message);
@@ -47,25 +47,30 @@ const BookDetail: React.FC = () => {
 
   const handleDelete = async () => {
     if (id) {
-      try {
-        const bookId = parseInt(id); 
-        await deleteBook(bookId); 
-        window.location.href = "/";
-      } catch (error: any) {
-        alert(`Error removing book: ${error.message}`);
+      const bookId = parseInt(id);
+      const isSuccess = await deleteBook(bookId); // Attempt to delete the book
+
+      if (isSuccess) {
+        window.location.href = "/"; // Redirect only if deletion is successful
+      } else {
+        console.error("Error removing book: Deletion failed.");
       }
     }
   };
 
   const handleUpdateBook = async (updatedBook: Book) => {
     if (id) {
-      try {
-        const bookId = parseInt(id);
-        await updateBook(bookId, updatedBook);
-        setBookData(updatedBook);
-        closeModal();
-      } catch (error: any) {
-        alert("Error updating book");
+      const bookId = parseInt(id);
+      const { id: _, ...oldBookData } = bookData as Book; // Store the old book data without the id
+
+      const isSuccess = await updateBook(bookId, updatedBook); // Attempt to update the book
+
+      if (isSuccess) {
+        setBookData(updatedBook); // Update state with the new data only if successful
+        closeModal(); // Close the modal only if successful
+      } else {
+        // If the update fails, revert to the original book data
+        setBookData(oldBookData);
       }
     }
   };

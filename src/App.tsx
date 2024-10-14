@@ -4,10 +4,12 @@ import { Suspense } from "react";
 import Layout from "./components/Layout/Layout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import BookPage from "./pages/BookPage/BookPage";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route element={<Layout />}>

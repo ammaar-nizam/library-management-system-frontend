@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
   const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
-
+  
   useEffect(() => {
     fetchBooks();
   }, []);
@@ -43,12 +43,11 @@ const Dashboard: React.FC = () => {
   };
 
   const handleCreateBook = async (newBook: Omit<Book, "id">) => {
-    try {
-      await createBook(newBook);
-      fetchBooks(); // Refresh the book list
-      closeModal();
-    } catch (error) {
-      console.error("Error creating book:", error);
+    const isSuccess = await createBook(newBook); // Attempt to create the book
+
+    if (isSuccess) {
+      fetchBooks(); // Refresh the book list only if creation is successful
+      closeModal(); // Close the modal only if successful
     }
   };
 

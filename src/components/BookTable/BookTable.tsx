@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Book } from "../../types/Book";
-import "./BookTable.css"
+import "./BookTable.css";
+import { ViewButton } from "../Button/Button";
 
 interface BookTableProps {
   books: Book[];
@@ -34,7 +35,7 @@ const BookTable: React.FC<BookTableProps> = ({ books }) => {
             <td>{book.author}</td>
             <td>{book.description}</td>
             <td>
-              <button onClick={() => handleViewBook(book.id)}>View</button>
+                <ViewButton onClick={() => handleViewBook(book.id)}/>
             </td>
           </tr>
         ))}

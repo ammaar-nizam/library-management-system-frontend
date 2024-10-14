@@ -1,0 +1,81 @@
+/* Style for the header section */
+section {
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a better appearance */
+  }
+  
+  section > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread out the items */
+  }
+  
+  section > div > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo styling */
+  img {
+    width: 40px; /* Adjust the size of the logo */
+    height: 40px;
+    margin-right: 15px; /* Space between the logo and the title */
+  }
+  
+  /* Title styling */
+  h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #343a40;
+  }
+  
+  /* Welcome text styling */
+  p {
+    font-size: 18px;
+    margin: 0;
+    color: #495057;
+  }
+  
+  /* Media Queries for Responsiveness */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+    section {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+    
+    h1 {
+        font-size: 20px; /* Slightly smaller title on smaller screens */
+    }
+
+    p {
+        font-size: 16px; /* Adjust welcome text size */
+    }
+
+    img {
+        width: 30px; /* Smaller logo for mobile */
+        height: 30px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    section > div {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: flex-start; /* Align items to the left */
+    }
+    
+    section > div > div {
+        justify-content: center; /* Center logo and title */
+        margin-bottom: 10px; /* Space below the logo and title */
+    }
+
+    h1 {
+        font-size: 18px; /* Smaller title for mobile */
+    }
+
+    p {
+        font-size: 14px; /* Smaller welcome text for mobile */
+    }
+}

@@ -1,0 +1,16 @@
+/* Layout.css */
+html,
+body {
+  height: 100%; /* Set height to 100% */
+  margin: 0; /* Remove default margin */
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Make sure it takes full height */
+}
+
+.content {
+  flex: 1; /* Allow the content area to grow and fill the available space */
+}

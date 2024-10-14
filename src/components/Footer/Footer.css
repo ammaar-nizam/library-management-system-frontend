@@ -1,0 +1,70 @@
+/* Style for the footer section */
+footer {
+  padding: 10px;
+  background-color: #f8f9fa; /* Light background */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a better appearance */
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spread out the items */
+  max-width: 1200px; /* Centering within a max width */
+  margin: auto; /* Center the footer */
+}
+
+/* Link styling */
+.links {
+  display: flex;
+  gap: 20px; /* Space between links */
+}
+
+.links a {
+  color: #007bff; /* Bootstrap primary color */
+  text-decoration: none; /* No underline */
+  display: flex; /* Flexbox to center the icon */
+  align-items: center; /* Center the icon vertically */
+  margin: 0 10px; /* Space between icons */
+  color: #333; /* Change color as needed */
+}
+
+.links a:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Copyright text styling */
+footer p {
+  margin: 0;
+  font-size: 14px; /* Font size for copyright */
+  color: #495057; /* Darker text for visibility */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center the copyright text */
+  }
+
+  .links {
+    margin-bottom: 10px; /* Space below links on smaller screens */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .links a {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+
+  footer p {
+    font-size: 12px; /* Smaller copyright text for mobile */
+  }
+}

@@ -10,12 +10,14 @@ const Footer: React.FC = () => {
           <a
             href="https://github.com/ammaar-nizam/"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <FaGithub size={24} /> 
+            <FaGithub size={24} />
           </a>
           <a
             href="https://www.linkedin.com/in/ammaar-nizam/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin size={24} />
           </a>

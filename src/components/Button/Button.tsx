@@ -1,5 +1,10 @@
 import React from "react";
-import { PencilIcon, PlusIcon, TrashIcon, BookOpenIcon } from "@heroicons/react/24/outline";
+import {
+  PencilIcon,
+  PlusIcon,
+  TrashIcon,
+  BookOpenIcon,
+} from "@heroicons/react/24/outline";
 import "./Button.css";
 
 // Define a type for the button props
@@ -10,7 +15,7 @@ interface ButtonProps {
 export const CreateButton: React.FC<ButtonProps> = ({ onClick }) => {
   return (
     <button className="btn" onClick={onClick}>
-      <span className="btn-text">Create Book</span>{" "}
+      <span className="btn-text">Create Book</span>
       <PlusIcon className="btn-icon" />
     </button>
   );

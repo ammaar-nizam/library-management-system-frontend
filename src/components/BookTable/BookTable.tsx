@@ -35,7 +35,7 @@ const BookTable: React.FC<BookTableProps> = ({ books }) => {
             <td>{book.author}</td>
             <td>{book.description}</td>
             <td>
-                <ViewButton onClick={() => handleViewBook(book.id)}/>
+              <ViewButton onClick={() => book.id && handleViewBook(book.id)} />
             </td>
           </tr>
         ))}

@@ -4,12 +4,17 @@ import {
   PlusIcon,
   TrashIcon,
   BookOpenIcon,
+  BookmarkIcon,
+  ArrowLeftIcon
+
 } from "@heroicons/react/24/outline";
 import "./Button.css";
 
 // Define a type for the button props
 interface ButtonProps {
-  onClick: () => void; // The onClick prop should be a function with no arguments and no return value
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit" | "reset";
+  children?: React.ReactNode;
 }
 
 export const CreateButton: React.FC<ButtonProps> = ({ onClick }) => {
@@ -44,6 +49,28 @@ export const DeleteButton: React.FC<ButtonProps> = ({ onClick }) => {
     <button className="btn" onClick={onClick}>
       <span className="btn-text">Delete Book</span>{" "}
       <TrashIcon className="btn-icon" />
+    </button>
+  );
+};
+
+export const CustomButton: React.FC<ButtonProps> = ({
+  onClick,
+  type = "button",
+  children
+}) => {
+  return (
+    <button type={type} className="btn" onClick={onClick}>
+      <span className="btn-text">{children}</span>
+      <BookmarkIcon className="btn-icon" />
+    </button>
+  );
+};
+
+export const CloseButton: React.FC<ButtonProps> = ({ onClick }) => {
+  return (
+    <button className="close-btn" onClick={onClick}>
+      <span className="btn-text">Close</span>
+      <ArrowLeftIcon className="btn-icon" />
     </button>
   );
 };

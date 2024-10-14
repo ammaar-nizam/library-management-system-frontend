@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { Book } from "../../types/Book";
-import { getBooks, createBook, deleteBook } from "../../services/bookService";
+import { getBooks, createBook } from "../../services/bookService";
 import BookTable from "../../components/BookTable/BookTable";
 import BookFormModal from "../../components/BookFormModal/BookFormModal";
 import "./Dashboard.css";
@@ -46,6 +46,7 @@ const Dashboard: React.FC = () => {
     try {
       await createBook(newBook);
       fetchBooks(); // Refresh the book list
+      closeModal();
     } catch (error) {
       console.error("Error creating book:", error);
     }

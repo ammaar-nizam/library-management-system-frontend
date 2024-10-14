@@ -2,6 +2,7 @@ import React, { useState, useEffect, FormEvent } from "react";
 import Modal from "react-modal";
 import "./BookFormModal.css";
 import { Book } from "../../types/Book";
+import { CloseButton, CustomButton } from "../Button/Button";
 
 // Define props for the BookFormModal component
 interface BookFormModalProps {
@@ -105,12 +106,10 @@ const BookFormModal: React.FC<BookFormModalProps> = ({
         </label>
 
         <div className="book-modal-button-container">
-          <button type="submit" className="create-btn">
+          <CustomButton type="submit" onClick={handleSubmit}>
             {initialBook ? "Save Changes" : "Create Book"}
-          </button>
-          <button type="button" className="close-btn" onClick={onClose}>
-            Close
-          </button>
+          </CustomButton>
+          <CloseButton onClick={onClose} />
         </div>
       </form>
     </Modal>

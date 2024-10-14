@@ -16,6 +16,24 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.close-btn {
+  background-color: #f44336; /* Different color for the close button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  width: 160px;
+  text-align: center;
+  margin-left: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 .btn-text {
   flex-grow: 1;
   text-align: left;

@@ -30,7 +30,7 @@ export const createBook = async (book: Book): Promise<Book> => {
 };
 
 // Update an existing book
-export const updateBook = async (id: number, book: Book): Promise<Book> => {
+export const updateBook = async (id: number, book: Book): Promise<void> => {
     const response = await fetch(`${API_URL}/${id}`, {
         method: "PUT",
         headers: {
@@ -39,7 +39,6 @@ export const updateBook = async (id: number, book: Book): Promise<Book> => {
         body: JSON.stringify(book),
     });
     if (!response.ok) throw new Error("Error in updating the book");
-    return await response.json();
 };
 
 // Delete a book by Id

@@ -12,7 +12,7 @@ import "./Button.css";
 
 // Define a type for the button props
 interface ButtonProps {
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   type?: "button" | "submit" | "reset";
   children?: React.ReactNode;
 }
@@ -55,7 +55,7 @@ export const DeleteButton: React.FC<ButtonProps> = ({ onClick }) => {
 
 export const CustomButton: React.FC<ButtonProps> = ({
   onClick,
-  type = "button",
+  type,
   children
 }) => {
   return (

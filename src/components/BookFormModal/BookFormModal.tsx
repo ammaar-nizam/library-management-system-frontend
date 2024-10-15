@@ -59,17 +59,9 @@ const BookFormModal: React.FC<BookFormModalProps> = ({
         description,
       };
       onSave(bookData);
-      resetForm();
     }
   };
-
-  const resetForm = () => {
-    setTitle("");
-    setAuthor("");
-    setDescription("");
-    setErrors({});
-  };
-
+  
   return (
     <Modal
       isOpen={isOpen}
@@ -81,10 +73,10 @@ const BookFormModal: React.FC<BookFormModalProps> = ({
       <h2>{initialBook ? "Edit Book" : "Create a New Book"}</h2>
       <form className="book-form" onSubmit={handleSubmit}>
         <label>
-          Book Name:
+          Title:
           <input
             type="text"
-            name="bookName"
+            name="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -114,7 +106,7 @@ const BookFormModal: React.FC<BookFormModalProps> = ({
         </label>
 
         <div className="book-modal-button-container">
-          <CustomButton type="submit" onClick={handleSubmit}>
+          <CustomButton type="submit">
             {initialBook ? "Save Changes" : "Create Book"}
           </CustomButton>
           <CloseButton onClick={onClose} />
